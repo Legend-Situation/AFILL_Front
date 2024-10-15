@@ -20,4 +20,4 @@ export const colors = {
   sub: {
     red: '#FF3F3F',
   },
-};
+}; 
