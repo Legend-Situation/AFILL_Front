@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { font, colors } from "@/styles";
+import { theme } from "@style";
 
 export const container = style({
   display: "flex",
@@ -12,13 +12,13 @@ export const container = style({
 export const logo = style({
   fontSize: "72px",
   fontWeight: "bold",
-  color: "#046DFF",
+  color: theme.colors.primary[600],
   marginBottom: "16px",
 });
 
 export const description = style({
   fontSize: "16px",
-  color: "#787878",
+  color: theme.colors.gray[500],
   marginBottom: "24px",
 });
 
@@ -26,11 +26,11 @@ export const googleButton = style({
   display: "flex",
   alignItems: "center",
   padding: "12px 24px",
-  backgroundColor: "#fff",
-  border: "1px solid #ccc",
+  backgroundColor: theme.colors.gray.white,
+  border: `1px solid ${theme.colors.gray[300]}`,
   borderRadius: "8px",
   fontSize: "16px",
-  color: "#000",
+  color: theme.colors.gray.black,
   cursor: "pointer",
   boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
   ":hover": {
