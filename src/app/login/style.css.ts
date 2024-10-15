@@ -1,4 +1,5 @@
 import { style } from "@vanilla-extract/css";
+import { font, colors } from "@/styles";
 
 export const container = style({
   display: "flex",
@@ -6,7 +7,6 @@ export const container = style({
   justifyContent: "center",
   alignItems: "center",
   height: "100vh",
-  backgroundColor: "#fff",
 });
 
 export const logo = style({
