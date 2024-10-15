@@ -1,23 +1,104 @@
-export const colors = {
-  primary: {
-    600: '#046DFF',
-    500: '#4392FF',
-    400: '#81B6FF',
-    300: '#9BC5FF',
-    200: '#B3D3FF',
-    100: '#E5F0FF',
+export const font = {
+  D1: {
+    fontSize: '72px',
+    lineHeight: '130%',
+    fontWeight: 'bold',
+    letterSpacing: '-1.5px',
   },
-  gray: {
-    black: '#1F1E23',
-    500: '#787878',
-    400: '#9C9C9C',
-    300: '#CCCCCC',
-    200: '#D9D9D9',
-    100: '#E6E6E6',
-    50: '#F6F6F8',
-    white: '#FFFFFF',
+  D2: {
+    fontSize: '60px',
+    lineHeight: '130%',
+    fontWeight: 'bold',
+    letterSpacing: '-0.5px',
   },
-  sub: {
-    red: '#FF3F3F',
+  D3: {
+    fontSize: '48px',
+    lineHeight: '130%',
+    fontWeight: 'bold',
+    letterSpacing: '0',
   },
-}; 
+  H1: {
+    fontSize: '36px',
+    lineHeight: '140%',
+    fontWeight: 'bold',
+    letterSpacing: '0.25px',
+  },
+  H2: {
+    fontSize: '28px',
+    lineHeight: '140%',
+    fontWeight: 'bold',
+    letterSpacing: '0',
+  },
+  H3: {
+    fontSize: '24px',
+    lineHeight: '140%',
+    fontWeight: 600,
+    letterSpacing: '0.15px',
+  },
+  H4: {
+    fontSize: '20px',
+    lineHeight: '140%',
+    fontWeight: 600,
+    letterSpacing: '0.15px',
+  },
+  H5: {
+    fontSize: '18px',
+    lineHeight: '140%',
+    fontWeight: 600,
+    letterSpacing: '0.15px',
+  },
+  p1: {
+    fontSize: '18px',
+    lineHeight: '160%',
+    fontWeight: 'normal',
+    letterSpacing: '-0.15px',
+  },
+  p2: {
+    fontSize: '16px',
+    lineHeight: '160%',
+    fontWeight: 'normal',
+    letterSpacing: '-0.15px',
+  },
+  p3: {
+    fontSize: '14px',
+    lineHeight: '160%',
+    fontWeight: 'normal',
+    letterSpacing: '-0.1px',
+  },
+  context: {
+    fontSize: '16px',
+    lineHeight: '130%',
+    fontWeight: 500,
+    letterSpacing: '0',
+  },
+  caption: {
+    fontSize: '12px',
+    lineHeight: '140%',
+    fontWeight: 'normal',
+    letterSpacing: '0',
+  },
+  code: {
+    fontSize: '16px',
+    lineHeight: '130%',
+    fontWeight: 'normal',
+    letterSpacing: '0',
+  },
+  btn1: {
+    fontSize: '18px',
+    lineHeight: '130%',
+    fontWeight: 600,
+    letterSpacing: '0',
+  },
+  btn2: {
+    fontSize: '16px',
+    lineHeight: '130%',
+    fontWeight: 500,
+    letterSpacing: '0',
+  },
+  btn3: {
+    fontSize: '14px',
+    lineHeight: '130%',
+    fontWeight: 500,
+    letterSpacing: '0',
+  },
+};
