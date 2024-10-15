@@ -1,2 +1,5 @@
-export { font } from './font';
-export { theme } from './theme';
+export * from './font';
+export * from './theme';
+
+
+

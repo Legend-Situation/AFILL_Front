@@ -1,4 +1,6 @@
-export const font = {
+import { styleVariants } from '@vanilla-extract/css';
+
+export const font = styleVariants ({
   D1: {
     fontSize: '72px',
     lineHeight: '130%',
@@ -101,4 +103,4 @@ export const font = {
     fontWeight: 500,
     letterSpacing: '0',
   },
-};
+});
