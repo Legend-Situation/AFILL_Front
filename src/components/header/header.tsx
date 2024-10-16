@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React from "react";
 import { Logo } from "@/ui/src/assets";
@@ -23,12 +23,16 @@ const Header = () => {
 
   return (
     <header className={s.container}>
-      <Logo width={96} />
+      <div className={s.logo} onClick={() => router.push("/")}>
+        <Logo width={96} />
+      </div>
       <nav className={s.menu}>
         {navItems.map((item) => (
           <div
             key={item.href}
-            className={`${s.menuItem} ${pathname === item.href ? s.active : ""}`}
+            className={`${s.menuItem} ${
+              pathname === item.href ? s.active : ""
+            }`}
             onClick={() => router.push(item.href)}
           >
             {item.name}

@@ -6,13 +6,16 @@ import { font } from "@ui/style/font.css";
 export const container = style({
   display: 'flex',
   justifyContent: 'space-between',
-  alignItems: 'stretch',
   backgroundColor: '#ffffff',
   borderBottom: `1px solid ${theme.gray[50]}`,
   padding: '0 200px',
   height: '80px',
 });
 
+export const logo = style({
+  display: 'flex',
+  alignItems: 'center',
+});
 
 export const menu = style({
   display: 'flex',
