@@ -40,7 +40,7 @@ const Header = () => {
         ))}
       </nav>
       <div className={s.profile}>
-        <p>강민지님</p>
+        <p className={s.profileName}>강민지님</p>
         <div className={s.profileIcon}></div>
       </div>
     </header>

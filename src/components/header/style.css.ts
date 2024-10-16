@@ -9,7 +9,7 @@ export const container = style({
   backgroundColor: '#ffffff',
   borderBottom: `1px solid ${theme.gray[50]}`,
   padding: '0 200px',
-  height: '80px',
+  height: '76px',
 });
 
 export const logo = style({
@@ -20,6 +20,7 @@ export const logo = style({
 export const menu = style({
   display: 'flex',
   gap: '50px',
+  marginRight: '300px',
 });
 
 export const menuItem = style({
@@ -49,6 +50,11 @@ export const profile = style({
   display: 'flex',
   alignItems: 'center',
   gap: '20px',
+});
+
+export const profileName = style({
+  ...font.btn1,
+  color: theme.gray.black,
 });
 
 export const profileIcon = style({
