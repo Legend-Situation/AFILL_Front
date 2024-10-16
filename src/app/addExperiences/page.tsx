@@ -1,53 +1,12 @@
 "use client"; // Fixed typo
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import * as s from "./style.css";
 import InputContainer from "@/components/inputContainer";
 import Keyword from "@/components/keyword";
 import Button from "@/components/button";
-import axios from "axios";
-import { CardTitle } from "@/components/experiences/card/style.css";
 
 const AddExperience = () => {
-  const [formData, setFormData] = useState({
-    cardTitle: "",
-    startDate: "",
-    endDate: "",
-    role: "",
-    impressions: "",
-  });
-
-  const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
-  };
-
-  const handleCreateCard = async () => {
-    try {
-      const response = await axios.post("https://afill.legend-situation.kro.kr/cards/", {
-        ...formData,
-        keyword: selectedKeywords.join(", "),
-        imgUrl: thumbnail
-      });
-      console.log(response);
-      // 성공 메시지 표시 또는 다른 페이지로 리다이렉트
-    } catch (error) {
-      console.error("카드 생성 중 오류 발생:", error);
-      // 오류 메시지 표시
-    }
-  };
-
-  useEffect(() => {
-    const handleCreateCard = async () => {
-      const response = await axios.post("https://afill.legend-situation.kro.kr/cards/", {
-        ...formData,
-        keyword: selectedKeywords.join(", "),
-        imgUrl: thumbnail,
-      });
-      console.log(response);
-    }
-    handleCreateCard();
-  }, []);
-
   const keywordText = [
     { id: 1, text: "인내심" },
     { id: 2, text: "책임감" },
@@ -100,8 +59,8 @@ const AddExperience = () => {
   };
 
   const inputSections = [
-    { type: "경험", field: "cardTitle" },
-    { type: "기간", field: "startDate", endField: "endDate" },
+    { type: "경험" },
+    { type: "기간" },
     {
       custom: (
         <div className={s.CustomContainer}>
@@ -144,38 +103,39 @@ const AddExperience = () => {
       ),
     },
 
-    { type: "역할", field: "role" },
+    { type: "역할" },
     { type: "기여도", bigWidth: true },
-    { type: "느낀점", field: "impressions", bigWidth: true },
+    { type: "느낀점", bigWidth: true },
     {
       custom: (
-        <div className={s.ThumbnailUp}>
-          <div className={s.ThumbnailUpTextContainer}>
-            <span className={s.ThumbnailUpMainText}>썸네일 업로드</span>
-            <span className={s.ThumbnailUpText}>
-              경험과 관련있는 이미지 파일을 업로드해주세요.
-            </span>
-          </div>
-          <div className={s.UpBtn}>
-            <Button
-              text="파일 업로드"
-              color="blue"
-              onClick={() => document.getElementById("fileInput")?.click()} // Only one button click trigger
-            />
-            <input
-              id="fileInput"
-              type="file"
-              accept="image/*"
-              className={s.FileInput}
-              onChange={handleFileChange}
-              style={{ display: "none" }}
-            />
+        <div className={s.ThumbnailUpContainer}>
+          <div className={s.ThumbnailUpInfo}>
+            <div className={s.ThumbnailUpTextContainer}>
+              <span className={s.ThumbnailUpMainText}>썸네일 업로드</span>
+              <span className={s.ThumbnailUpText}>
+                경험과 관련있는 이미지 파일을 업로드해주세요.
+              </span>
+            </div>
+            <div className={s.UpBtn}>
+              <Button
+                text="파일 업로드"
+                color="blue"
+                onClick={() => document.getElementById("fileInput")?.click()}
+              />
+              <input
+                id="fileInput"
+                type="file"
+                accept="image/*"
+                className={s.FileInput}
+                onChange={handleFileChange}
+                style={{ display: "none" }}
+              />
+            </div>
           </div>
           {thumbnail && (
-            <div className={s.ThumbnailPreviewContainer}>
+            <div className={s.ThumbnailPreview}>
               <img
                 src={thumbnail}
-                alt="미리보기"
                 className={s.ThumbnailImage}
               />
             </div>
@@ -197,19 +157,12 @@ const AddExperience = () => {
             {section.custom ? (
               section.custom
             ) : (
-              <InputContainer 
-                type={section.type} 
-                bigWidth={section.bigWidth}
-                value={formData[section.field as keyof typeof formData]}
-                onChange={(value) => handleInputChange(section.field, value)}
-                endValue={section.endField ? formData[section.endField as keyof typeof formData] : undefined}
-                onEndChange={section.endField ? (value) => handleInputChange(section.endField, value) : undefined}
-              />
+              <InputContainer type={section.type} bigWidth={section.bigWidth} />
             )}
           </div>
         ))}
       </div>
-      <Button text="경험카드 등록" color="blue" onClick={handleCreateCard}/>
+      <Button text="경험카드 등록" color="blue"/>
     </main>
   );
 };

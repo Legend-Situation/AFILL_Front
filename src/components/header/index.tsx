@@ -54,7 +54,7 @@ const Header = () => {
       </nav>
       {user && (
         <div className={s.profile}>
-          <p className={s.profileName}>{user.data.nickname} 님</p>
+          <p className={s.profileName}>{user.data.nickname}님</p>
           <img src={user.data.profileImg} className={s.profileIcon}></img>
         </div>
       )}
