@@ -1,23 +1,17 @@
-"use client";
-
-import React, { useState } from "react";
+import React from "react";
 import * as s from "./style.css";
 
 type KeywordProps = {
   text: string;
+  isSelected: boolean;
+  onClick: () => void;
 };
 
-const Keyword = ({ text }: KeywordProps) => {
-  const [isSelected, setIsSelected] = useState(false);
-
-  const handleClick = () => {
-    setIsSelected(!isSelected);
-  };
-
+const Keyword = ({ text, isSelected, onClick }: KeywordProps) => {
   return (
     <main
       className={`${s.Layout} ${isSelected ? s.Selected : ""}`}
-      onClick={handleClick}
+      onClick={onClick}
     >
       <span>{text}</span>
     </main>
