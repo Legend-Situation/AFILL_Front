@@ -103,9 +103,7 @@ export const ThumbnailUpTextContainer = style({
   flexDirection: 'column',
 });
 
-export const ThumbnailPreview = style({
-  marginTop: '10px',
-});
+
 
 export const ThumbnailUpMainText = style({
   ...font.btn1,
@@ -118,13 +116,9 @@ export const ThumbnailUpText = style({
 });
 
 
-export const FileInput = style({
-  display: "none",
-});
-
 
 export const ThumbnailImage = style({
-  maxWidth: '200px',
+  maxWidth: '300px',
   height: 'auto',
   borderRadius: '8px',
 });

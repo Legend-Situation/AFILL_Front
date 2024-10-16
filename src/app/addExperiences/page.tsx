@@ -126,19 +126,16 @@ const AddExperience = () => {
                 id="fileInput"
                 type="file"
                 accept="image/*"
-                className={s.FileInput}
                 onChange={handleFileChange}
                 style={{ display: "none" }}
               />
             </div>
           </div>
           {thumbnail && (
-            <div className={s.ThumbnailPreview}>
               <img
                 src={thumbnail}
                 className={s.ThumbnailImage}
               />
-            </div>
           )}
         </div>
       ),
