@@ -3,12 +3,13 @@ import { font, theme } from "@/ui/style";
 
 export const SortButtonContainer = style({
   display: "flex",
+  gap: "8px",
 });
 
 export const SortButton = style({
   ...font.btn1,
   color: theme.gray[500],
-  padding: "10px",
+  padding: "10px 10px 3px 0",
   cursor: "pointer",
   border: "none",
   background: "none",

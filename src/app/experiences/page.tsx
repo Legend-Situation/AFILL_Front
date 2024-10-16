@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import SortButton from '@/components/sortButton';
 import Card from "@/components/experiences/card";
 import * as s from "./style.css";
+import Button from '@/components/button';
 
 type SortType = '최신순' | '등록순';
 
@@ -33,7 +34,8 @@ const Experiences = () => {
     return (
         <div className={s.Layout}>
             <div className={s.ButtonContainer}>
-            <SortButton currentSort={currentSort} onSortChange={setCurrentSort} />
+                <SortButton currentSort={currentSort} onSortChange={setCurrentSort} />
+                <Button text="경험카드 등록" color="blue" />
             </div>
             <div className={s.Container}>
                 {cardsData.map((cardData, index) => (

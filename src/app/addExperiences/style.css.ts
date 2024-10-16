@@ -2,7 +2,7 @@ import { font, theme } from "@/ui/style";
 import { style } from "@vanilla-extract/css";
 
 export const Layout = style({
-  backgroundColor: "#FDFDFF",
+  backgroundColor:theme.background,
   width: "100vw",
   padding: "54px 0",
   display: "flex",

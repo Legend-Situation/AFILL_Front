@@ -13,9 +13,10 @@ export const Layout = style({
 
 export const ButtonContainer = style({
     display: "flex",
-    justifyContent: "flex-end",
+    justifyContent: "space-between",
+    alignItems: "center",
     width: "100%",
-    marginBottom: "10px",
+    marginBottom: "14px",
 });
 
 export const Container = style({
@@ -29,8 +30,8 @@ export const Container = style({
 export const Title = style({
     ...font.H1,
     color: theme.gray.black,
-    margin: '0 0 40px 0', // 제목과 그리드 사이에 간격 추가
+    margin: '0 0 40px 0',
     padding: '0',
-    alignSelf: 'flex-start', // 제목을 왼쪽으로 정렬
+    alignSelf: 'flex-start',
     width: '100%',
 })

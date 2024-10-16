@@ -1,12 +1,53 @@
 "use client"; // Fixed typo
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import * as s from "./style.css";
 import InputContainer from "@/components/inputContainer";
 import Keyword from "@/components/keyword";
 import Button from "@/components/button";
+import axios from "axios";
+import { CardTitle } from "@/components/experiences/card/style.css";
 
 const AddExperience = () => {
+  const [formData, setFormData] = useState({
+    cardTitle: "",
+    startDate: "",
+    endDate: "",
+    role: "",
+    impressions: "",
+  });
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+  };
+
+  const handleCreateCard = async () => {
+    try {
+      const response = await axios.post("https://afill.legend-situation.kro.kr/cards/", {
+        ...formData,
+        keyword: selectedKeywords.join(", "),
+        imgUrl: thumbnail
+      });
+      console.log(response);
+      // 성공 메시지 표시 또는 다른 페이지로 리다이렉트
+    } catch (error) {
+      console.error("카드 생성 중 오류 발생:", error);
+      // 오류 메시지 표시
+    }
+  };
+
+  useEffect(() => {
+    const handleCreateCard = async () => {
+      const response = await axios.post("https://afill.legend-situation.kro.kr/cards/", {
+        ...formData,
+        keyword: selectedKeywords.join(", "),
+        imgUrl: thumbnail,
+      });
+      console.log(response);
+    }
+    handleCreateCard();
+  }, []);
+
   const keywordText = [
     { id: 1, text: "인내심" },
     { id: 2, text: "책임감" },
@@ -59,8 +100,8 @@ const AddExperience = () => {
   };
 
   const inputSections = [
-    { type: "경험" },
-    { type: "기간" },
+    { type: "경험", field: "cardTitle" },
+    { type: "기간", field: "startDate", endField: "endDate" },
     {
       custom: (
         <div className={s.CustomContainer}>
@@ -103,9 +144,9 @@ const AddExperience = () => {
       ),
     },
 
-    { type: "역할" },
+    { type: "역할", field: "role" },
     { type: "기여도", bigWidth: true },
-    { type: "느낀점", bigWidth: true },
+    { type: "느낀점", field: "impressions", bigWidth: true },
     {
       custom: (
         <div className={s.ThumbnailUp}>
@@ -156,11 +197,19 @@ const AddExperience = () => {
             {section.custom ? (
               section.custom
             ) : (
-              <InputContainer type={section.type} bigWidth={section.bigWidth} />
+              <InputContainer 
+                type={section.type} 
+                bigWidth={section.bigWidth}
+                value={formData[section.field as keyof typeof formData]}
+                onChange={(value) => handleInputChange(section.field, value)}
+                endValue={section.endField ? formData[section.endField as keyof typeof formData] : undefined}
+                onEndChange={section.endField ? (value) => handleInputChange(section.endField, value) : undefined}
+              />
             )}
           </div>
         ))}
       </div>
+      <Button text="경험카드 등록" color="blue" onClick={handleCreateCard}/>
     </main>
   );
 };
