@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import * as s from "./style.css";
 
 type KeywordProps = {
@@ -6,8 +8,17 @@ type KeywordProps = {
 };
 
 const Keyword = ({ text }: KeywordProps) => {
+  const [isSelected, setIsSelected] = useState(false);
+
+  const handleClick = () => {
+    setIsSelected(!isSelected);
+  };
+
   return (
-    <main className={s.Layout}>
+    <main
+      className={`${s.Layout} ${isSelected ? s.Selected : ""}`}
+      onClick={handleClick}
+    >
       <span>{text}</span>
     </main>
   );

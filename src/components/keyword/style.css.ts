@@ -9,8 +9,9 @@ export const Layout = style({
   width: "fit-content",
   borderRadius: "8px",
   cursor: "pointer",
-  ":hover": {
-    backgroundColor: theme.primary[600],
-    color: theme.gray.white,
-  },
+});
+
+export const Selected = style({
+  backgroundColor: theme.primary[600],
+  color: theme.gray.white,
 });
