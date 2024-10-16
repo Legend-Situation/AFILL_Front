@@ -43,7 +43,7 @@ export const InputPeriod = style({
   border: `1px solid ${theme.gray[100]}`,
   marginRight: "8px",
   borderRadius: "4px",
-  maxWidth: "3%",
+  maxWidth: "5%",
   width: "auto",
 });
 
