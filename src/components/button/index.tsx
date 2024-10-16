@@ -1,10 +1,10 @@
 import React from "react";
 import * as s from "./style.css";
-import classNames from "classnames"; // classnames 라이브러리 사용
+import classNames from "classnames";
 
 type ButtonProps = {
   text: string;
-  color: "gray" | "blue"; // color 속성 추가
+  color: "gray" | "blue";
 };
 
 const Button = ({ text, color }: ButtonProps) => {
