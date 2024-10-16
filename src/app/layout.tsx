@@ -1,5 +1,5 @@
 
-import Header from '@/components/header/header';
+import Header from '@/components/header';
 import localFont from 'next/font/local';
 
 export const pretendard = localFont({

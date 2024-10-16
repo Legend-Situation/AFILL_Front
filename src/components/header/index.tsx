@@ -3,7 +3,6 @@
 import React from "react";
 import { Logo } from "@/ui/src/assets";
 import * as s from "./style.css";
-import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
 const Header = () => {
