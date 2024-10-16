@@ -1,16 +1,24 @@
-import React from 'react';
-import * as s from './style.css';
+import React from "react";
+import * as s from "./style.css";
+import classNames from "classnames";
 
 type ButtonProps = {
   text: string;
-}
+  color: "gray" | "blue";
+  onClick?: () => void;
+};
 
-const AddExperienceButton = ({ text }: ButtonProps) => {
+const Button = ({ text, color, onClick }: ButtonProps) => {
+  const buttonClass = classNames(s.Button, {
+    [s.grayButton]: color === "gray",
+    [s.blueButton]: color === "blue",
+  });
+
   return (
-    <button className={s.Button}>
+    <button className={buttonClass} onClick={onClick}>
       {text}
     </button>
   );
 };
 
-export default AddExperienceButton;
+export default Button;
