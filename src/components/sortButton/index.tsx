@@ -8,7 +8,7 @@ interface SortButtonProps {
   onSortChange: (sort: SortType) => void;
 }
 
-const SortButton: React.FC<SortButtonProps> = ({ currentSort, onSortChange }) => {
+const SortButton = ({ currentSort, onSortChange }: SortButtonProps) => {
   return (
     <div className={s.SortButtonContainer}>
       <button 
