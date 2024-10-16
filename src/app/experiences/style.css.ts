@@ -8,7 +8,14 @@ export const Layout = style({
     alignItems: "center",
     height: "100vh",
     background: theme.background,
-    padding:"80px 200px"
+    padding:"50px 200px"
+});
+
+export const ButtonContainer = style({
+    display: "flex",
+    justifyContent: "flex-end",
+    width: "100%",
+    marginBottom: "10px",
 });
 
 export const Container = style({

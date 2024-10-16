@@ -32,7 +32,9 @@ const Experiences = () => {
 
     return (
         <div className={s.Layout}>
+            <div className={s.ButtonContainer}>
             <SortButton currentSort={currentSort} onSortChange={setCurrentSort} />
+            </div>
             <div className={s.Container}>
                 {cardsData.map((cardData, index) => (
                     <Card key={index} data={cardData} />
