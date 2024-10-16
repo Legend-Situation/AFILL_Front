@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import * as S from "./style.css";
+import * as s from "./style.css";
 import Keyword from "../keyword";
 
 interface CardProps {
@@ -17,22 +17,20 @@ interface CardProps {
 }
 
 const Card = ({ data }: CardProps) => {
-    const maxLength = 45; // 최대 글자 수 설정
+    const maxLength = 45;
     const trimmedContents = data.contents.length > maxLength
         ? `${data.contents.substring(0, maxLength)}...`
         : data.contents;
 
     return (
-        <div className={S.Card}>
-            <div className={S.CardContent}>
-                <p className={S.DateRange}>
+        <div className={s.Card}>
+                <p className={s.DateRange}>
                     {data.date.start} ~ {data.date.end}
                 </p>
-                <h2 className={S.CardTitle}>{data.title}</h2>
-                <p className={S.CardContents}>{trimmedContents}</p>
+                <h2 className={s.CardTitle}>{data.title}</h2>
+                <p className={s.CardContents}>{trimmedContents}</p>
                 <Keyword keywords={data.keywords} />
-            </div>
-            <div className={S.CardImage}></div>
+            <div className={s.CardImage}></div>
         </div>
     );
 };

@@ -1,5 +1,6 @@
 import Card from "@/components/experiences/card";
 import * as s from "./style.css";
+import { Button } from "@/components/button/style.css";
 
 const Experiences = () => {
     const cardsData = [
@@ -18,7 +19,7 @@ const Experiences = () => {
         {
             date: { start: "2025.01.", end: "2025.03." },
             title: "인턴십 프로그램 참여",
-            contents: "대학교 3학년 때 참여한 인턴십 프로그램에서 실무 경험을 쌓았습니다ㄷㅂㅈㄷㅂㅈㄷㅂㅈㄷㅂㅈㄷㅂㅈㄷㅂ갸갸갸갸갸갸갸ㅈㄷㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇ",
+            contents: "라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라라",
             keywords: ["실무경험", "프로젝트 관리", "협업"],
         },
     ];
@@ -27,9 +28,9 @@ const Experiences = () => {
         <div className={s.Layout}>
             <div className={s.Container}>
                 {cardsData.map((cardData, index) => (
-                <Card key={index} data={cardData} />
-            ))}
-        </div>
+                    <Card key={index} data={cardData} />
+                ))}
+            </div>
         </div>
     );
 };

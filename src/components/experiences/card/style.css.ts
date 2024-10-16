@@ -6,6 +6,7 @@ export const Card = style({
     display: 'flex',
     height: '320px',
     padding: '30px 25px',
+    margin: '0',
     flexDirection: 'column',
     borderRadius: '20px',
     background: theme.gray.white,
@@ -19,6 +20,8 @@ export const DateRange = style({
     margin: '0',
 })
 
+
+
 export const CardTitle = style({
     ...font.H4,
     color: theme.gray.black,
@@ -29,9 +32,9 @@ export const CardTitle = style({
 export const CardContents = style({
     ...font.p2,
     color: theme.gray.black,
-        margin: '0',
+    margin: '0',
     padding: '0',
-    maxHeight: '100px',
+    maxHeight: '80px',
 })
 
 export const CardImage = style({
