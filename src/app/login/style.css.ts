@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
-import { theme } from "@style/theme";
-import { font } from "@style/font";
+import { font } from "@ui/style/font.css";
+import { theme } from "@ui/style/theme.css";
 
 export const container = style({
   display: "flex",
@@ -11,35 +11,30 @@ export const container = style({
 });
 
 export const logo = style({
-  font: font.D1,
+  ...font.D1, // 개별 속성으로 적용
   color: theme.colors.primary[600],
   marginBottom: "16px",
 });
 
 export const description = style({
-  ...font.p2,  // p2 폰트 스타일 적용
   color: theme.colors.gray[500],
   marginBottom: "24px",
 });
 
 export const googleButton = style({
   display: "flex",
+  justifyContent: "center",
   alignItems: "center",
-  padding: "12px 24px",
+  padding: "14px 50px",
   backgroundColor: theme.colors.gray.white,
-  border: `1px solid ${theme.colors.gray[300]}`,
   borderRadius: "8px",
-  ...font.btn2,  // btn2 폰트 스타일 적용
-  color: theme.colors.gray.black,
+  gap: "20px",
   cursor: "pointer",
-  boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-  ":hover": {
-    boxShadow: "0 6px 8px rgba(0, 0, 0, 0.15)",
-  },
+  boxShadow: "0px 2px 12px rgba(171, 190, 209, 0.25)",
 });
 
-export const googleIcon = style({
-  marginRight: "8px",
-  width: "24px",
-  height: "24px",
+export const googleButtonText = style({
+  textAlign: "center",
+  ...font.H2, // 개별 속성으로 적용
+  color: theme.colors.gray.black,
 });
