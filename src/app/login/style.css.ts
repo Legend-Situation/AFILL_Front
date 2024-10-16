@@ -10,31 +10,27 @@ export const container = style({
   height: "100vh",
 });
 
-export const logo = style({
-  ...font.D1, // 개별 속성으로 적용
-  color: theme.colors.primary[600],
-  marginBottom: "16px",
-});
-
 export const description = style({
+  ...font.p1,
   color: theme.colors.gray[500],
-  marginBottom: "24px",
+  margin: "25px 0px",
 });
 
 export const googleButton = style({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  padding: "14px 50px",
+  padding: "14px 70px",
   backgroundColor: theme.colors.gray.white,
   borderRadius: "8px",
   gap: "20px",
   cursor: "pointer",
-  boxShadow: "0px 2px 12px rgba(171, 190, 209, 0.25)",
+  border: "none",
+  boxShadow: "0px 2px 12px 0px rgba(171, 190, 209, 0.25)",
 });
 
 export const googleButtonText = style({
   textAlign: "center",
-  ...font.H2, // 개별 속성으로 적용
+  ...font.btn2,
   color: theme.colors.gray.black,
 });
