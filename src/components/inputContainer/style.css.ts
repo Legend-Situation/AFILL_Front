@@ -5,15 +5,18 @@ export const Layout = style({
   display: "flex",
   flexDirection: "column",
 });
+
 export const Title = style({
   ...font.H4,
   color: theme.gray.black,
   paddingBottom: "8px",
 });
+
 export const Star = style({
   paddingLeft: "2px",
   color: theme.sub.red,
 });
+
 export const Input = style({
   padding: "14px 20px",
   border: `1px solid ${theme.gray[100]}`,
@@ -39,7 +42,6 @@ export const InputPeriod = style({
   border: `1px solid ${theme.gray[100]}`,
   marginRight: "8px",
   borderRadius: "4px",
-  ...font.p2,
   maxWidth: "3%",
   width: "auto",
 });
@@ -61,4 +63,12 @@ globalStyle(`${InputPeriod}::-webkit-inner-spin-button`, {
 
 globalStyle(`${InputPeriod}`, {
   MozAppearance: "textfield",
+});
+
+globalStyle("input", {
+  ...font.p2,
+});
+
+globalStyle("textarea", {
+  ...font.p2,
 });
