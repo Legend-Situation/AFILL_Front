@@ -23,5 +23,6 @@ export const theme = createGlobalTheme(':root', {
       red: '#FF3F3F',
       subText: '#F1F1F4',
     },
+    background: '#F6F6F8',
   },
 );
