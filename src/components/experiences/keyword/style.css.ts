@@ -3,10 +3,8 @@ import {font, theme} from "@ui/style";
 
 export const keywords = style({
     width: '100%',
-    height: '57px',
-
     display: 'flex',
-    gap: '5px',
+    gap: '6px',
 })
 
 export const keyword = style({
@@ -17,7 +15,5 @@ export const keyword = style({
     border: `solid 1px ${theme.primary["300"]}`,
     color: theme.primary["600"],
     textAlign: 'center',
-
-    marginTop: '14px',
-    marginBottom: '14px',
+    margin: '6px 0 12px 0',
 })
