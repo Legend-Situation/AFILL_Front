@@ -1,4 +1,5 @@
 
+import Header from '@/components/header/header';
 import localFont from 'next/font/local';
 
 export const pretendard = localFont({
@@ -15,7 +16,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={pretendard.variable}>
-      <body>{children}</body>
+      <body>
+      <Header />{children}</body>
     </html>
   );
 }

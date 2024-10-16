@@ -12,7 +12,7 @@ export const container = style({
 
 export const description = style({
   ...font.p1,
-  color: theme.colors.gray[500],
+  color: theme.gray[500],
   margin: "25px 0px",
 });
 
@@ -21,7 +21,7 @@ export const googleButton = style({
   justifyContent: "center",
   alignItems: "center",
   padding: "14px 70px",
-  backgroundColor: theme.colors.gray.white,
+  backgroundColor: theme.gray.white,
   borderRadius: "8px",
   gap: "20px",
   cursor: "pointer",
@@ -32,5 +32,5 @@ export const googleButton = style({
 export const googleButtonText = style({
   textAlign: "center",
   ...font.btn2,
-  color: theme.colors.gray.black,
+  color: theme.gray.black,
 });

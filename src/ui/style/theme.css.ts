@@ -1,7 +1,6 @@
 import { createGlobalTheme } from '@vanilla-extract/css';
 
 export const theme = createGlobalTheme(':root', {
-  colors: {
     primary: {
       600: '#046DFF',
       500: '#4392FF',
@@ -24,4 +23,4 @@ export const theme = createGlobalTheme(':root', {
       red: '#FF3F3F',
     },
   },
-});
+);
