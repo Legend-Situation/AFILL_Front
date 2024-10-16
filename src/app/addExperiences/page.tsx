@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 import * as s from "./style.css";
-import InputContainer from "@/components/inputContainer/page";
-import Keyword from "@/components/keyword/page";
+import InputContainer from "@/components/inputContainer";
+import Keyword from "@/components/keyword";
 import Button from "@/components/button";
 
 const AddExperience = () => {
