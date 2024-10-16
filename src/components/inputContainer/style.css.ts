@@ -22,6 +22,7 @@ export const Input = style({
   border: `1px solid ${theme.gray[100]}`,
   borderRadius: "8px",
   resize: "none",
+  outline: "none",
 });
 
 export const BigInput = style([
