@@ -1,3 +1,15 @@
+import { globalFontFace, globalStyle } from "@vanilla-extract/css";
+
+globalFontFace('Pretendard', {
+  src: 'url("/PretendardVariable.woff2") format("woff2")',
+  fontWeight: 'normal',
+  fontStyle: 'normal',
+  fontDisplay: 'swap',
+});
+globalStyle('body', {
+  fontFamily: 'Pretendard, sans-serif',
+});
+
 export const font = {
   D1: {
     fontSize: '72px',
