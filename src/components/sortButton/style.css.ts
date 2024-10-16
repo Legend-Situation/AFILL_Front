@@ -3,7 +3,6 @@ import { font, theme } from "@/ui/style";
 
 export const SortButtonContainer = style({
   display: "flex",
-  gap: "5px",
 });
 
 export const SortButton = style({
