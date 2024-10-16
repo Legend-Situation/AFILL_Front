@@ -12,7 +12,7 @@ const Header = () => {
   const navItems = [
     {
       name: "경험카드",
-      href: "/experience-card",
+      href: "/experiences",
     },
     {
       name: "자기소개서",

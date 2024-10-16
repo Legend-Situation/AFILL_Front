@@ -11,5 +11,5 @@ export const Button = style({
   padding: '12px 20px',
   textAlign: 'center',
   cursor: 'pointer',
-  transition: 'background-color 0.3s ease', // 호버 시 부드러운 전환
+  transition: 'background-color 0.3s ease'
 });
