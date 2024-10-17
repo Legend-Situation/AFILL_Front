@@ -104,7 +104,6 @@ export const ThumbnailUpTextContainer = style({
 });
 
 
-
 export const ThumbnailUpMainText = style({
   ...font.btn1,
   color: theme.gray.black,
@@ -112,10 +111,8 @@ export const ThumbnailUpMainText = style({
 
 export const ThumbnailUpText = style({
   ...font.p2,
-  color: theme.gray[500],
+  color: theme.gray[400],
 });
-
-
 
 export const ThumbnailImage = style({
   maxWidth: '300px',
