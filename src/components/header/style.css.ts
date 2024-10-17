@@ -58,8 +58,8 @@ export const profileName = style({
 });
 
 export const profileIcon = style({
-  width: '42px',
-  height: '42px',
+  width: '44px',
+  height: '44px',
   backgroundColor: '#eaeaea',
   borderRadius: '100%',
 });

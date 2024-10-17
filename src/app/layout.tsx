@@ -1,12 +1,6 @@
-
+"use client";
 import Header from '@/components/header';
-import localFont from 'next/font/local';
-
-export const pretendard = localFont({
-  src: '../../public/PretendardVariable.woff2',
-  display: 'swap',
-  variable: '--font-pretendard',
-});
+import { usePathname } from 'next/navigation';
 
 
 export default function RootLayout({
@@ -14,10 +8,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pathname = usePathname();
+  const isHeaderVisible = pathname !== '/login';
   return (
-    <html lang="en" className={pretendard.variable}>
+    <html lang="en" >
       <body>
-      <Header />{children}</body>
+      {isHeaderVisible && <Header />}
+      {children}</body>
     </html>
   );
 }

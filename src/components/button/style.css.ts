@@ -9,6 +9,7 @@ export const Button = style({
   padding: "12px 20px",
   textAlign: "center",
   cursor: "pointer",
+  width: "fit-content",
 });
 
 export const grayButton = style({

@@ -43,27 +43,13 @@ export const InputPeriod = style({
   border: `1px solid ${theme.gray[100]}`,
   marginRight: "8px",
   borderRadius: "4px",
-  maxWidth: "5%",
+  maxWidth: "10%",
   width: "auto",
 });
 
 export const GrayText = style({
   color: theme.gray[300],
   padding: "0 15px 0 8px",
-});
-
-globalStyle(`${InputPeriod}::-webkit-outer-spin-button`, {
-  WebkitAppearance: "none",
-  margin: 0,
-});
-
-globalStyle(`${InputPeriod}::-webkit-inner-spin-button`, {
-  WebkitAppearance: "none",
-  margin: 0,
-});
-
-globalStyle(`${InputPeriod}`, {
-  MozAppearance: "textfield",
 });
 
 globalStyle("input", {

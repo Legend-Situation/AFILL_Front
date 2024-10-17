@@ -1,0 +1,17 @@
+export const keywordText = [
+  { id: 1, text: "인내심" },
+  { id: 2, text: "책임감" },
+  { id: 4, text: "창의력" },
+  { id: 5, text: "리더십" },
+  { id: 6, text: "문제 해결" },
+  { id: 7, text: "커뮤니케이션" },
+  { id: 8, text: "적응력" },
+  { id: 9, text: "끈기" },
+  { id: 11, text: "기획력" },
+  { id: 12, text: "논리적 사고" },
+  { id: 15, text: "섬세함" },
+  { id: 17, text: "설득력" },
+  { id: 18, text: "주도적" },
+  { id: 20, text: "능동적인" },
+  { id: 22, text: "열정" },
+];
