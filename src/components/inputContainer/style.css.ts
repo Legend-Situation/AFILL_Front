@@ -52,20 +52,6 @@ export const GrayText = style({
   padding: "0 15px 0 8px",
 });
 
-globalStyle(`${InputPeriod}::-webkit-outer-spin-button`, {
-  WebkitAppearance: "none",
-  margin: 0,
-});
-
-globalStyle(`${InputPeriod}::-webkit-inner-spin-button`, {
-  WebkitAppearance: "none",
-  margin: 0,
-});
-
-globalStyle(`${InputPeriod}`, {
-  MozAppearance: "textfield",
-});
-
 globalStyle("input", {
   ...font.p2,
 });

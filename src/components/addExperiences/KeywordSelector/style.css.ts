@@ -9,18 +9,16 @@ export const CustomContainer = style({
 export const CustomTitle = style({
   ...font.H4,
   color: theme.gray.black,
-  paddingBottom: "3px",
 });
 
 export const Star = style({
-  paddingLeft: "2px",
   color: theme.sub.red,
 });
 
 export const CustomerSubtitle = style({
   ...font.p3,
-  color: theme.gray[400],
-  paddingBottom: "9px",
+  color: theme.gray[500],
+  paddingBottom: "15px",
 });
 
 export const KeywordContainer = style({
@@ -43,6 +41,9 @@ export const AddKeywordInput = style({
   width: "40%",
   border: `1px solid ${theme.gray[100]}`,
   borderRadius: "8px",
-  padding: "13px 16px",
+  padding: "16px",
   outline: "none",
+  '::placeholder': {
+    color: theme.gray[300],
+  }
 });

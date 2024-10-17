@@ -64,7 +64,7 @@ const KeywordSelector = ({
         />
         <Button
           text="추가"
-          color={newKeyword.length > 0 && selectedKeywords.length < 4 ? "blue" : "gray"}
+          color={newKeyword.length > 0 && selectedKeywords.length < 5 ? "blue" : "gray"}
           onClick={handleAddKeyword}
         />
       </div>

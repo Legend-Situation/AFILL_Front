@@ -6,9 +6,10 @@ type InputProps = {
   bigWidth?: boolean;
   value?: string;
   onChange?: (value: string) => void;
+  onPeriodChange?: (subField: string, value: string) => void;
 };
 
-const InputContainer = ({ type, bigWidth, value, onChange }: InputProps) => {
+const InputContainer = ({ type, bigWidth, value, onChange, onPeriodChange }: InputProps) => {
   const inputConfig = {
     기여도: {
       title: "나의 기여도",
@@ -50,6 +51,10 @@ const InputContainer = ({ type, bigWidth, value, onChange }: InputProps) => {
     onChange?.(e.target.value);
   };
 
+  const handlePeriodChange = (e: React.ChangeEvent<HTMLInputElement>, subField: string) => {
+    onPeriodChange?.(subField, e.target.value);
+  };
+
   return (
     <main className={s.Layout}>
       <span className={s.Title}>
@@ -58,11 +63,11 @@ const InputContainer = ({ type, bigWidth, value, onChange }: InputProps) => {
       </span>
       {type === "기간" ? (
         <div className={s.PeriodInputContainer}>
-          <input type="number" className={s.InputPeriod} placeholder="YYYY" onChange={handleChange} />
-          <input type="number" className={s.InputPeriod} placeholder="MM" onChange={handleChange} />
+          <input type="number" className={s.InputPeriod} placeholder="YYYY" onChange={(e) => handlePeriodChange(e, 'startYear')} />
+          <input type="number" className={s.InputPeriod} placeholder="MM" onChange={(e) => handlePeriodChange(e, 'startMonth')} />
           <span className={s.GrayText}>~</span>
-          <input type="number" className={s.InputPeriod} placeholder="YYYY" onChange={handleChange} />
-          <input type="number" className={s.InputPeriod} placeholder="MM" onChange={handleChange} />
+          <input type="number" className={s.InputPeriod} placeholder="YYYY" onChange={(e) => handlePeriodChange(e, 'endYear')} />
+          <input type="number" className={s.InputPeriod} placeholder="MM" onChange={(e) => handlePeriodChange(e, 'endMonth')} />
         </div>
       ) : isTextArea ? (
         <textarea
