@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 
 type SortType = "최신순" | "등록순";
 
-interface CardData {
+type CardData = {
   cardId: number;
   cardTitle: string;
   startDate: string;
@@ -19,14 +19,14 @@ interface CardData {
   role: string;
   impressions: string;
   imgUrl: string | null;
-}
+};
 
-interface axiosResponse {
+type ApiResponse = {
   status: number;
   success: boolean;
   message: string;
   data: CardData[];
-}
+};
 
 const Experiences = () => {
   const [currentSort, setCurrentSort] = useState<SortType>("최신순");
@@ -36,6 +36,11 @@ const Experiences = () => {
   useEffect(() => {
     fetchCards();
   }, []);
+
+  useEffect(() => {
+    const sortedCards = sortCards(cards);
+    setCards(sortedCards);
+  }, [currentSort]);
 
   const fetchCards = async () => {
     try {
@@ -62,18 +67,16 @@ const Experiences = () => {
 
   const sortCards = (cards: CardData[]): CardData[] => {
     if (!Array.isArray(cards)) {
-      console.error("Cards is not an array:", cards);
+      console.error("카드가 배열이 아닙니다:", cards);
       return [];
     }
     return [...cards].sort((a, b) => {
+      const dateA = new Date(a.startDate.replace(".", "-"));
+      const dateB = new Date(b.startDate.replace(".", "-"));
       if (currentSort === "최신순") {
-        return (
-          new Date(b.startDate).getTime() - new Date(a.startDate).getTime()
-        );
+        return dateB.getTime() - dateA.getTime();
       } else {
-        return (
-          new Date(a.startDate).getTime() - new Date(b.startDate).getTime()
-        );
+        return dateA.getTime() - dateB.getTime();
       }
     });
   };
@@ -81,8 +84,6 @@ const Experiences = () => {
   const handleAddExperience = () => {
     router.push("/addExperiences");
   };
-
-  const sortedCards = sortCards(cards);
 
   return (
     <div className={s.Layout}>
@@ -95,7 +96,7 @@ const Experiences = () => {
         />
       </div>
       <div className={s.Container}>
-        {sortedCards.map((cardData) => (
+        {cards.map((cardData) => (
           <Card
             key={cardData.cardId}
             data={{
