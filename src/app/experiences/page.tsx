@@ -104,6 +104,7 @@ const Experiences = () => {
               title: cardData.cardTitle,
               contents: cardData.impressions,
               keywords: cardData.keyword.split(", "),
+              imgUrl: cardData.imgUrl || "",
             }}
           />
         ))}

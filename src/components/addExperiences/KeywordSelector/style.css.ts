@@ -4,7 +4,14 @@ import { style } from "@vanilla-extract/css";
 export const CustomContainer = style({
   display: "flex",
   flexDirection: "column",
+  backgroundColor: '#FFF',
+  padding: '40px 50px',
+  borderRadius: '20px',
+  border: '1px solid #F6F6F8',
+  boxShadow: '0px 0px 10px 0px rgba(212, 212, 212, 0.25)',
+  gap: '5px'
 });
+
 
 export const CustomTitle = style({
   ...font.H4,

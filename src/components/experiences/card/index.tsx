@@ -3,6 +3,7 @@
 import React from "react";
 import * as s from "./style.css";
 import Keyword from "../keyword";
+import Image from "next/image";
 
 interface CardProps {
     data: {
@@ -13,6 +14,7 @@ interface CardProps {
         title: string;
         contents?: string;
         keywords?: string[];
+        imgUrl: string;
     };
 }
 
@@ -34,7 +36,9 @@ const Card = ({ data }: CardProps) => {
             <h2 className={s.CardTitle} title={data.title}>{trimmedTitle}</h2>
             <p className={s.CardContents}>{trimmedContents}</p>
             {data.keywords && <Keyword keywords={data.keywords} />}
-            <div className={s.CardImage}></div>
+            {data.imgUrl && (
+                <Image src={data.imgUrl} alt={data.title} width={320} height={200} style={{ borderRadius: '10px' }} />
+            )}
         </div>
     );
 };

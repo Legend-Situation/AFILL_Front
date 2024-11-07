@@ -20,8 +20,6 @@ export const DateRange = style({
     margin: '0',
 })
 
-
-
 export const CardTitle = style({
     ...font.H4,
     color: theme.gray.black,
@@ -35,12 +33,4 @@ export const CardContents = style({
     margin: '0',
     padding: '0',
     maxHeight: '80px',
-})
-
-export const CardImage = style({
-    backgroundColor: theme.gray[500],
-    width: '100%',
-    height: '180px',
-    borderRadius: '10px',
-    marginTop: 'auto',
 })

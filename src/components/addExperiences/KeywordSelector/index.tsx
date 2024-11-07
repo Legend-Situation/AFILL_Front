@@ -1,20 +1,24 @@
-import React, { useState, KeyboardEvent } from "react";
-import * as s from "./style.css";
-import Keyword from "@/components/keyword";
-import Button from "@/components/button";
+import React, { useState, KeyboardEvent } from 'react';
+import * as s from './style.css';
+import Keyword from '@/components/keyword';
+import Button from '@/components/button';
 
 interface KeywordSelectorProps {
   selectedKeywords: string[];
   setSelectedKeywords: React.Dispatch<React.SetStateAction<string[]>>;
   keywordText: { id: number; text: string }[];
+  setKeywordText: React.Dispatch<
+    React.SetStateAction<{ id: number; text: string }[]>
+  >;
 }
 
 const KeywordSelector = ({
   selectedKeywords,
   setSelectedKeywords,
   keywordText,
-}: KeywordSelectorProps) => { 
-  const [newKeyword, setNewKeyword] = useState<string>("");
+  setKeywordText
+}: KeywordSelectorProps) => {
+  const [newKeyword, setNewKeyword] = useState<string>('');
 
   const handleKeywordClick = (keyword: string) => {
     if (selectedKeywords.includes(keyword)) {
@@ -25,9 +29,25 @@ const KeywordSelector = ({
   };
 
   const handleAddKeyword = () => {
-    if (newKeyword && !selectedKeywords.includes(newKeyword) && selectedKeywords.length < 4) {
-      setSelectedKeywords([...selectedKeywords, newKeyword]);
-      setNewKeyword("");
+    if (newKeyword && selectedKeywords.length < 4) {
+      if (selectedKeywords.includes(newKeyword)) {
+        alert('이미 선택된 키워드입니다.');
+        return;
+      }
+      if (!keywordText.some((k) => k.text === newKeyword)) {
+        const newId =
+          keywordText.length > 0
+            ? Math.max(...keywordText.map((k) => k.id)) + 1
+            : 1;
+        if (selectedKeywords.length >= 4) {
+          const updatedKeywords = selectedKeywords.slice(1);
+          setSelectedKeywords([...updatedKeywords, newKeyword]);
+        } else {
+          setSelectedKeywords([...selectedKeywords, newKeyword]);
+        }
+        setKeywordText([...keywordText, { id: newId, text: newKeyword }]);
+        setNewKeyword('');
+      }
     }
   };
 
@@ -64,7 +84,11 @@ const KeywordSelector = ({
         />
         <Button
           text="추가"
-          color={newKeyword.length > 0 && selectedKeywords.length < 5 ? "blue" : "gray"}
+          color={
+            newKeyword.length > 0 && selectedKeywords.length < 5
+              ? 'blue'
+              : 'gray'
+          }
           onClick={handleAddKeyword}
         />
       </div>

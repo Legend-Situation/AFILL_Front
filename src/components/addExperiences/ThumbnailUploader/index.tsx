@@ -1,17 +1,58 @@
-import React from "react";
-import * as s from "./stlye.css";
-import Button from "@/components/button";
+import React from 'react';
+import * as s from './stlye.css';
+import Button from '@/components/button';
+import axios from 'axios';
 
 interface ThumbnailUploaderProps {
   thumbnail: string | null;
   setThumbnail: React.Dispatch<React.SetStateAction<string | null>>;
+  onUploadComplete: (url: string) => void;
 }
 
-const ThumbnailUploader = ({ thumbnail, setThumbnail }: ThumbnailUploaderProps) => {
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+const ThumbnailUploader = ({
+  thumbnail,
+  setThumbnail,
+  onUploadComplete
+}: ThumbnailUploaderProps) => {
+  const handleFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
-      setThumbnail(URL.createObjectURL(file));
+      const url = await uploadImage(file);
+      if (url) {
+        setThumbnail(url);
+        onUploadComplete(url);
+      }
+    }
+  };
+
+  const uploadImage = async (file: File) => {
+    const formData = new FormData();
+    formData.append('img', file);
+    const accessToken = localStorage.getItem('accessToken');
+    if (!accessToken) {
+      console.error('Access token not found');
+      return;
+    }
+
+    try {
+      const response = await axios.post(
+        'https://afill.legend-situation.kro.kr/upload/image',
+        formData,
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+            accessToken: accessToken
+          }
+        }
+      );
+      
+      if (response.status !== 200) {
+        throw new Error('이미지 업로드 실패');
+      }
+
+      return response.data.data.url;
+    } catch (error) {
+      console.error('업로드 중 오류 발생:', error);
     }
   };
 
@@ -27,14 +68,14 @@ const ThumbnailUploader = ({ thumbnail, setThumbnail }: ThumbnailUploaderProps) 
         <Button
           text="파일 업로드"
           color="blue"
-          onClick={() => document.getElementById("fileInput")?.click()}
+          onClick={() => document.getElementById('fileInput')?.click()}
         />
         <input
           id="fileInput"
           type="file"
           accept="image/*"
           onChange={handleFileChange}
-          style={{ display: "none" }}
+          style={{ display: 'none' }}
         />
       </div>
       {thumbnail && (

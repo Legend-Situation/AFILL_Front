@@ -5,16 +5,17 @@ import { font } from "@ui/style/font.css";
 
 export const container = style({
   display: 'flex',
-  justifyContent: 'space-between',
+  justifyContent: 'start',
   backgroundColor: '#ffffff',
   borderBottom: `1px solid ${theme.gray[50]}`,
   padding: '0 200px',
-  height: '76px',
+  height: '76px'
 });
 
 export const logo = style({
   display: 'flex',
   alignItems: 'center',
+  marginRight: '33%',
 });
 
 export const menu = style({
@@ -31,6 +32,7 @@ export const menuItem = style({
   display: 'flex',
   alignItems: 'center',
   position: 'relative',
+  cursor: 'pointer',
 });
 
 export const active = style({

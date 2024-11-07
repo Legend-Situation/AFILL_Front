@@ -8,6 +8,7 @@ import axios from "axios";
 
 const Header = () => {
   const [user, setUser] = useState<any>(null);
+  const [loading, setLoading] = useState<boolean>(true);
   const pathname = usePathname();
   const router = useRouter();
 
@@ -31,6 +32,8 @@ const Header = () => {
       } catch (error) {
         console.error('인증 상태 확인 중 오류 발생:', error);
         setUser(null);
+      } finally {
+        setLoading(false);
       }
     }
     googleAuthState();
@@ -52,7 +55,7 @@ const Header = () => {
           </div>
         ))}
       </nav>
-      {user && (
+      {!loading && user && (
         <div className={s.profile}>
           <p className={s.profileName}>{user.data.nickname}님</p>
           <img src={user.data.profileImg} className={s.profileIcon}></img>

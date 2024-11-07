@@ -1,4 +1,4 @@
-export const keywordText = [
+export const keywordTexts = [
   { id: 1, text: "인내심" },
   { id: 2, text: "책임감" },
   { id: 4, text: "창의력" },
