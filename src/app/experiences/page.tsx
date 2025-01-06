@@ -58,7 +58,7 @@ const Experiences = () => {
           },
         }
       );
-
+      
       setCards(response.data.data);
     } catch (error) {
       console.error("카드 가져오기 오류:", error);

@@ -8,7 +8,7 @@ export const Layout = style({
   alignItems: 'center',
   height: '100vh',
   background: theme.background,
-  padding: '50px 200px'
+  margin: '50px 200px'
 });
 
 export const header = style({
@@ -19,10 +19,20 @@ export const header = style({
   marginBottom: '32px'
 });
 
+export const TitleContainer = style ({
+  display:"flex",
+  flexDirection:"column"
+})
+
 export const title = style({
-  ...font.h,
+  ...font.H2,
   color: theme.gray.black
 });
+
+export const subTitle = style({
+  ...font.p1,
+  color: theme.gray[500]
+})
 
 export const cardList = style({
   width: '100%',
@@ -32,15 +42,13 @@ export const cardList = style({
 });
 
 export const card = style({
-  width: '100%',
   padding: '24px',
-  background: theme.white,
-  borderRadius: '8px',
-  border: `1px solid ${theme.gray[50]}`,
+  borderRadius: '12px',
+  border: `2px solid ${theme.gray[100]}`,
   cursor: 'pointer',
   ...font.p1,
   color: theme.gray.black,
   ':hover': {
-    border: `1px solid ${theme.primary[600]}`
+    border: `2px solid ${theme.primary[600]}`
   }
 });
