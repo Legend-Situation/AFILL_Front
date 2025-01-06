@@ -37,7 +37,7 @@ const Card = ({ data }: CardProps) => {
             <p className={s.CardContents}>{trimmedContents}</p>
             {data.keywords && <Keyword keywords={data.keywords} />}
             {data.imgUrl && (
-                <Image src={data.imgUrl} alt={data.title} width={320} height={200} style={{ borderRadius: '10px' }} />
+                <Image src={data.imgUrl} alt={data.title} width={320} height={200} style={{ borderRadius: '10px' }} unoptimized />
             )}
         </div>
     );

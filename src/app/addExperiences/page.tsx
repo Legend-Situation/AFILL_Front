@@ -114,7 +114,7 @@ const AddExperience = () => {
           placeholder="전공동아리 하프 UX/UI 디자이너"
           provider="text"
           star
-          max={15}
+          max={30}
           value={formData.제목}
           onChangeMethod={(value: string) => {
             setFormData((prev) => ({ ...prev, 제목: value }));
