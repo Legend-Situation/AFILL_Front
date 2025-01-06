@@ -37,7 +37,22 @@ const AddExperience = () => {
   const [keywordText, setKeywordText] =
     useState<{ id: number; text: string }[]>(keywordTexts);
 
-  console.log(selectedKeywords);
+  const isFormValid = () => {
+    const { 제목, 역할, 기여도, 느낀점, 기간 } = formData;
+    const { startYear, startMonth, endYear, endMonth } = 기간;
+    
+    return (
+      제목.trim() !== '' &&
+      역할.trim() !== '' &&
+      기여도.trim() !== '' &&
+      느낀점.trim() !== '' &&
+      startYear !== '' &&
+      startMonth !== '' &&
+      endYear !== '' &&
+      endMonth !== '' &&
+      selectedKeywords.length > 0
+    );
+  };
 
   const createExperience = async () => {
     try {
@@ -153,14 +168,14 @@ const AddExperience = () => {
         <ExperiencesInput
           title="나의 기여도"
           placeholder={`기여한 부분을 작성해주세요.
-            · Design System 구축
-            · 사용자 흐름 (user flow) 설계
-            · 디자인 시스템 구축 및 운영
-            · 전체적인 기획
-            · 외부 라이브러리 사용`}
+          · Design System 구축
+          · 사용자 흐름 (user flow) 설계
+          · 디자인 시스템 구축 및 운영
+          · 전체적인 기획
+          · 외부 라이브러리 사용`}
           provider="textarea"
           star
-          max={150}
+          max={180}
           value={formData.기여도}
           onChangeMethod={(value: string) => {
             setFormData((prev) => ({ ...prev, 기여도: value }));
@@ -174,7 +189,7 @@ const AddExperience = () => {
 또한, 이 경험이 나의 성장에 어떤 영향을 미쳤는지 적어주세요.`}
           provider="textarea"
           star
-          max={150}
+          max={300}
           value={formData.느낀점}
           onChangeMethod={(value: string) => {
             setFormData((prev) => ({ ...prev, 느낀점: value }));
@@ -189,7 +204,7 @@ const AddExperience = () => {
       </div>
       <Button
         text="경험카드 추가하기"
-        color="gray"
+        color={isFormValid() ? "blue" : "gray"}
         onClick={createExperience}
       />
     </main>

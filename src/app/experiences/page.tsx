@@ -58,7 +58,7 @@ const Experiences = () => {
           },
         }
       );
-      
+
       setCards(response.data.data);
     } catch (error) {
       console.error("카드 가져오기 오류:", error);
@@ -96,18 +96,22 @@ const Experiences = () => {
         />
       </div>
       <div className={s.Container}>
-        {cards.map((cardData) => (
-          <Card
-            key={cardData.cardId}
-            data={{
-              date: { start: cardData.startDate, end: cardData.endDate },
-              title: cardData.cardTitle,
-              contents: cardData.impressions,
-              keywords: cardData.keyword.split(", "),
-              imgUrl: cardData.imgUrl || "",
-            }}
-          />
-        ))}
+        {cards.length === 0 ? (
+          <div className={s.emptyMessage}>등록된 경험카드가 없습니다.</div>
+        ) : (
+          cards.map((cardData) => (
+            <Card
+              key={cardData.cardId}
+              data={{
+                date: { start: cardData.startDate, end: cardData.endDate },
+                title: cardData.cardTitle,
+                contents: cardData.impressions,
+                keywords: cardData.keyword.split(", "),
+                imgUrl: cardData.imgUrl || "",
+              }}
+            />
+          ))
+        )}
       </div>
     </div>
   );
