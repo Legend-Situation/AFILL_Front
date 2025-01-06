@@ -51,7 +51,7 @@ const Experiences = () => {
       }
 
       const response = await axios.get<ApiResponse>(
-        "https://afill.legend-situation.kro.kr/cards/",
+        "https://afill-back.hash-squad.kro.kr/cards/",
         {
           headers: {
             accessToken: accessToken,

@@ -18,7 +18,6 @@ interface OwnProps {
   onChangeMethod: (value: any) => void;
 }
 
-
 const ExperiencesInput = ({
   title,
   placeholder,

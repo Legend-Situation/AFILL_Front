@@ -36,7 +36,7 @@ const ThumbnailUploader = ({
 
     try {
       const response = await axios.post(
-        'https://afill.legend-situation.kro.kr/upload/image',
+        'https://afill-back.hash-squad.kro.kr/upload/image',
         formData,
         {
           headers: {
