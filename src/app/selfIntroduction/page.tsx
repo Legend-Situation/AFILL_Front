@@ -26,7 +26,7 @@ const SelfIntroduction = () => {
       </div>
       <div className={s.cardList}>
         <div className={s.card}>
-          <span>2023 카카오 인턴십 지원</span>
+          <span>강민지의 자소서 1</span>
         </div>
       </div>
     </div>

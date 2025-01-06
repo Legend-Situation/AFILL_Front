@@ -4,74 +4,102 @@ import { font } from '@/ui/style';
 
 export const Layout = style({
   display: 'flex',
-  gap: '40px',
-  margin: '50px 200px',
-  width:"100vw"
+  margin: '40px auto',
+  width: '100vw',
+  justifyContent: 'center'
 });
 
-export const cardLayout = style({
-  width:"40vw",
-  borderRadius:"25px",
-  boxShadow: "0px 0px 10px 0px rgba(212, 212, 212, 0.25)",
-})
+export const container = style({
+  display: 'flex',
+  gap: '20px',
+  alignItems: 'center'
+});
+
+export const leftLayout = style({
+  width: '40vw',
+  height: '800px',
+  borderRadius: '25px',
+  boxShadow: '0px 0px 10px 0px rgba(212, 212, 212, 0.25)',
+  backgroundColor: 'white',
+  overflow: 'hidden'
+});
+
+export const leftContainer = style({
+  height: '100%',
+  width:"100%",
+  display:"flex",
+});
 
 export const cardContainer = style({
   display: 'flex',
   flexDirection: 'column',
   gap: '20px',
   width: '50%',
+  height: '100%',
+  padding: '20px',
   backgroundColor: theme.primary[100],
-  padding:"20px"
+  overflow: 'auto'
 });
 
 export const card = style({
-  padding: '20px',
   backgroundColor: 'white',
   borderRadius: '16px',
+  cursor: 'pointer'
 });
 
-export const titleContainer = style ({
-  display:"flex",
-  flexDirection:"column",
-  padding:"40px 28px"
-})
+export const selectedCard = style({
+  backgroundColor: 'white',
+  borderRadius: '16px',
+  cursor: 'pointer',
+  border: `1px solid ${theme.primary[500]}`
+});
 
-export const myExperienceCard = style ({
+export const detailContainer = style({
+  display: 'flex',
+  flexDirection: 'column',
+  width: '50%',
+  height: '100%',
+  padding: '20px',
+  overflow: 'auto',
+  gap: '10px',
+});
+
+export const titleContainer = style({
+  display: 'flex',
+  flexDirection: 'column',
+  padding: '40px 28px'
+});
+
+export const myExperienceCard = style({
   ...font.H3,
   color: theme.gray.black
-})
+});
 
 export const subTitle = style({
   ...font.p2,
   color: theme.gray[500]
-})
-
-export const cardDate = style({
-  fontSize: '14px',
-  color: '#666'
 });
 
-export const cardTitle = style({
-  fontSize: '16px',
-  fontWeight: 'bold',
-  margin: '8px 0'
-});
-
-export const tagContainer = style({
+export const buttonContainer = style({
   display: 'flex',
-  gap: '8px'
+  flexDirection: 'column',
+  gap: '10px',
+  alignItems: 'center',
+  marginTop: '30px'
 });
 
-export const tag = style({
-  padding: '4px 12px',
-  backgroundColor: '#f0f0f0',
-  borderRadius: '20px',
-  fontSize: '12px'
+export const loading = style({
+  ...font.p3,
+  color: theme.gray.black
 });
 
-export const rightSection = style({
-  width: '50%',
-  padding: '20px'
+export const rightLayout = style({
+  width: '40vw',
+  height: '800px',
+  borderRadius: '25px',
+  boxShadow: '0px 0px 10px 0px rgba(212, 212, 212, 0.25)',
+  padding: '20px',
+  backgroundColor: 'white'
 });
 
 export const textContent = style({
@@ -79,15 +107,52 @@ export const textContent = style({
   padding: '20px',
   backgroundColor: 'white',
   borderRadius: '8px',
-  marginTop: '20px'
+  marginTop: '20px',
+  border: `1px solid ${theme.gray[200]}`
 });
 
-export const submitButton = style({
-  padding: '12px 24px',
-  backgroundColor: '#007bff',
-  color: 'white',
-  border: 'none',
+export const emptyLayout = style({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+  height: '100vh',
+  gap: '20px'
+});
+
+export const selectedCardDetail = style({
+  display: 'flex',
+  flexDirection: 'column',
+  backgroundColor: 'white',
+  borderRadius: '12px'
+});
+
+export const selectedCardTitle = style({
+  ...font.H4,
+  color: theme.gray.black,
+  margin: 0
+});
+
+export const selectedCardContent = style({
+  ...font.p2,
+  color: theme.gray[500],
+  margin: '10px 0'
+});
+
+export const noSelection = style({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  marginTop:"50px",
+  color: theme.gray[500]
+});
+
+export const titleInput = style({
+  ...font.H3,
+  width: '100%',
+  padding: '20px',
   borderRadius: '8px',
-  cursor: 'pointer',
-  marginTop: '20px'
+  marginBottom: '20px',
+  outline: 'none',
+  border: 'none'
 });
