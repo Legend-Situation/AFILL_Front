@@ -4,7 +4,7 @@ import { font } from '@/ui/style';
 
 export const Layout = style({
   display: 'flex',
-  margin: '40px auto',
+  margin: '30px auto',
   width: '100vw',
   justifyContent: 'center'
 });
@@ -17,7 +17,7 @@ export const container = style({
 
 export const leftLayout = style({
   width: '40vw',
-  height: '800px',
+  height: '650px',
   borderRadius: '25px',
   boxShadow: '0px 0px 10px 0px rgba(212, 212, 212, 0.25)',
   backgroundColor: 'white',
@@ -96,7 +96,7 @@ export const loading = style({
 export const rightLayout = style({
   boxSizing: 'border-box',
   width: '40vw',
-  height: '800px',
+  height: '650px',
   borderRadius: '25px',
   boxShadow: '0px 0px 10px 0px rgba(212, 212, 212, 0.25)',
   padding: '20px',

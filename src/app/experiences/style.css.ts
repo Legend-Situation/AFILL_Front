@@ -24,6 +24,7 @@ export const Container = style({
   rowGap: '30px',
   flexWrap: 'wrap',
   margin: '0 auto',
+  alignItems:"start",
   width: '100%'
 });
 

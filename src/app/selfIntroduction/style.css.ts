@@ -42,13 +42,30 @@ export const cardList = style({
 });
 
 export const card = style({
-  padding: '24px',
+  padding: '20px',
   borderRadius: '12px',
-  border: `2px solid ${theme.gray[100]}`,
+  border: `2px solid ${theme.gray[50]}`,
   cursor: 'pointer',
   ...font.p1,
+  
   color: theme.gray.black,
   ':hover': {
     border: `2px solid ${theme.primary[600]}`
   }
+});
+
+export const emptyMessage = style({
+  width: '100%',
+  textAlign: 'center',
+  padding: '40px',
+  borderRadius: '12px',
+  backgroundColor: 'white',
+  border: `2px solid ${theme.gray[100]}`,
+  ...font.p1,
+  color: theme.gray[500]
+});
+
+export const date = style({
+  ...font.p3,
+  color: theme.gray[500]
 });
