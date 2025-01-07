@@ -19,10 +19,11 @@ export const ButtonContainer = style({
 });
 
 export const Container = style({
-  display: 'grid',
-  gridTemplateColumns: 'repeat(3, 1fr)',
-  gap: '20px',
-  margin:"0 auto",
+  display: 'flex',
+  justifyContent: 'space-between',
+  rowGap: '30px',
+  flexWrap: 'wrap',
+  margin: '0 auto',
   width: '100%'
 });
 
@@ -36,16 +37,15 @@ export const Title = style({
 });
 
 export const emptyMessage = style({
-    ...font.p1,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: '100%',
-    textAlign: 'center',
-    color:theme.gray[500]
-  });
-  
+  ...font.p1,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: '100%',
+  textAlign: 'center',
+  color: theme.gray[500]
+});

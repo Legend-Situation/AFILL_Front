@@ -194,7 +194,7 @@ const MakeAi = () => {
           <div className={s.textContent}>{generatedContent}</div>
         <div className={s.buttonContainer}>
           {isLoading && (
-            <div className={s.loading}>자기소개서를 첨삭중입니다...</div>
+            <div className={s.loading}>자기소개서를 첨삭중입니다. 10초 정도 소요됩니다...</div>
           )}
           <Button
             text="자기소개서 만들기"

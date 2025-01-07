@@ -94,6 +94,7 @@ export const loading = style({
 });
 
 export const rightLayout = style({
+  boxSizing: 'border-box',
   width: '40vw',
   height: '800px',
   borderRadius: '25px',
@@ -101,6 +102,7 @@ export const rightLayout = style({
   padding: '20px',
   backgroundColor: 'white'
 });
+
 
 export const textContent = style({
   minHeight: '300px',

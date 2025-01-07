@@ -45,7 +45,7 @@ const Header = () => {
 
   return (
     <header className={s.container}>
-      <div onClick={() => router.push('/')}>
+      <div onClick={() => router.push('/experiences')}>
         <Logo width={96} />
       </div>
       <nav className={s.menu}>

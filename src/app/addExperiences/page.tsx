@@ -158,7 +158,7 @@ const AddExperience = () => {
           placeholder="ex) UX/UI 디자이너"
           provider="text"
           star
-          max={10}
+          max={30}
           value={formData.역할}
           onChangeMethod={(value: string) => {
             setFormData((prev) => ({ ...prev, 역할: value }));
@@ -175,7 +175,7 @@ const AddExperience = () => {
           · 외부 라이브러리 사용`}
           provider="textarea"
           star
-          max={180}
+          max={200}
           value={formData.기여도}
           onChangeMethod={(value: string) => {
             setFormData((prev) => ({ ...prev, 기여도: value }));
@@ -189,7 +189,7 @@ const AddExperience = () => {
 또한, 이 경험이 나의 성장에 어떤 영향을 미쳤는지 적어주세요.`}
           provider="textarea"
           star
-          max={300}
+          max={500}
           value={formData.느낀점}
           onChangeMethod={(value: string) => {
             setFormData((prev) => ({ ...prev, 느낀점: value }));

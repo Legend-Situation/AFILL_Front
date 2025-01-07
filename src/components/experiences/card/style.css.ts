@@ -4,8 +4,9 @@ import {font, theme} from "@ui/style";
 
 export const Card = style({
     display: 'flex',
+    width:"280px",
     height: '320px',
-    padding: '25px 25px',
+    padding: '25px',
     margin: '0',
     flexDirection: 'column',
     borderRadius: '20px',

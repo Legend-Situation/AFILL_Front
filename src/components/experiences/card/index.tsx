@@ -44,9 +44,15 @@ const Card = ({ data }: CardProps) => {
         <Image
           src={data.imgUrl}
           alt={data.title}
-          width={320}
-          height={200}
-          style={{ borderRadius: '10px' }}
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{
+            width: '100%',
+            height: '180px',
+            objectFit: 'cover',
+            borderRadius: '10px'
+          }}
           unoptimized
         />
       )}
