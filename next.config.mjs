@@ -39,7 +39,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'afill.legend-situation.kro.kr'
+        hostname: 'afill-back.hash-squad.kro.kr'
       }
     ]
   }

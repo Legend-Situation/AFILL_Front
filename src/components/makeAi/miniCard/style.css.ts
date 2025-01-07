@@ -3,15 +3,9 @@ import {font, theme} from "@ui/style";
 
 
 export const Card = style({
-    display: 'flex',
-    width:"280px",
-    height: '320px',
-    padding: '25px',
-    margin: '0',
-    flexDirection: 'column',
-    borderRadius: '20px',
-    background: theme.gray.white,
-    boxShadow: '0px 0px 10px 0px rgba(212, 212, 212, 0.50)',
+  padding: '20px',
+  backgroundColor: 'white',
+  borderRadius: '16px',
 });
 
 export const DateRange = style({

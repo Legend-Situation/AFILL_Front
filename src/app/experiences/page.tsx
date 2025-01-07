@@ -51,7 +51,7 @@ const Experiences = () => {
       }
 
       const response = await axios.get<ApiResponse>(
-        "https://afill.legend-situation.kro.kr/cards/",
+        "https://afill-back.hash-squad.kro.kr/cards/",
         {
           headers: {
             accessToken: accessToken,
@@ -96,18 +96,22 @@ const Experiences = () => {
         />
       </div>
       <div className={s.Container}>
-        {cards.map((cardData) => (
-          <Card
-            key={cardData.cardId}
-            data={{
-              date: { start: cardData.startDate, end: cardData.endDate },
-              title: cardData.cardTitle,
-              contents: cardData.impressions,
-              keywords: cardData.keyword.split(", "),
-              imgUrl: cardData.imgUrl || "",
-            }}
-          />
-        ))}
+        {cards.length === 0 ? (
+          <div className={s.emptyMessage}>등록된 경험카드가 없습니다.</div>
+        ) : (
+          cards.map((cardData) => (
+            <Card
+              key={cardData.cardId}
+              data={{
+                date: { start: cardData.startDate, end: cardData.endDate },
+                title: cardData.cardTitle,
+                contents: cardData.impressions,
+                keywords: cardData.keyword.split(", "),
+                imgUrl: cardData.imgUrl || "",
+              }}
+            />
+          ))
+        )}
       </div>
     </div>
   );

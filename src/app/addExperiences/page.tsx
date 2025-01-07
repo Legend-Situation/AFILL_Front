@@ -1,14 +1,14 @@
 'use client';
 
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import * as s from './style.css';
 import Button from '@/components/button';
 import axios from 'axios';
-import {useRouter} from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import ExperiencesInput from '@/components/addExperiences/ExperiencesInput';
 import KeywordSelector from '@/components/addExperiences/KeywordSelector';
-import {keywordTexts} from './constants'
-import ThumbnailUploader from "../../components/addExperiences/ThumbnailUploader";
+import { keywordTexts } from './constants';
+import ThumbnailUploader from '../../components/addExperiences/ThumbnailUploader';
 
 interface DateValue {
   startYear: string;
@@ -34,9 +34,25 @@ const AddExperience = () => {
 
   const [selectedKeywords, setSelectedKeywords] = useState<string[]>([]);
   const [thumbnail, setThumbnail] = useState<string | null>(null);
-  const [keywordText, setKeywordText] = useState<{ id: number; text: string }[]>(keywordTexts);
+  const [keywordText, setKeywordText] =
+    useState<{ id: number; text: string }[]>(keywordTexts);
 
-  console.log(selectedKeywords);
+  const isFormValid = () => {
+    const { 제목, 역할, 기여도, 느낀점, 기간 } = formData;
+    const { startYear, startMonth, endYear, endMonth } = 기간;
+    
+    return (
+      제목.trim() !== '' &&
+      역할.trim() !== '' &&
+      기여도.trim() !== '' &&
+      느낀점.trim() !== '' &&
+      startYear !== '' &&
+      startMonth !== '' &&
+      endYear !== '' &&
+      endMonth !== '' &&
+      selectedKeywords.length > 0
+    );
+  };
 
   const createExperience = async () => {
     try {
@@ -49,7 +65,12 @@ const AddExperience = () => {
       const { 제목, 역할, 기여도, 느낀점 } = formData;
       const regex = /.+/;
 
-      if (!regex.test(제목) || !regex.test(역할) || !regex.test(기여도) || !regex.test(느낀점)) {
+      if (
+        !regex.test(제목) ||
+        !regex.test(역할) ||
+        !regex.test(기여도) ||
+        !regex.test(느낀점)
+      ) {
         alert('모든 필드를 채워주세요.');
         return;
       }
@@ -59,8 +80,8 @@ const AddExperience = () => {
         return `${year}.${month.padStart(2, '0')}`;
       };
 
-      const {data} = await axios.post(
-        'https://afill.legend-situation.kro.kr/cards/',
+      const { data } = await axios.post(
+        'https://afill-back.hash-squad.kro.kr/cards/',
         {
           cardTitle: formData.제목,
           startDate: formatDate(
@@ -108,10 +129,10 @@ const AddExperience = () => {
           placeholder="전공동아리 하프 UX/UI 디자이너"
           provider="text"
           star
-          max={15}
+          max={30}
           value={formData.제목}
           onChangeMethod={(value: string) => {
-            setFormData((prev) => ({...prev, 제목: value}));
+            setFormData((prev) => ({ ...prev, 제목: value }));
           }}
         />
 
@@ -137,27 +158,27 @@ const AddExperience = () => {
           placeholder="ex) UX/UI 디자이너"
           provider="text"
           star
-          max={10}
+          max={30}
           value={formData.역할}
           onChangeMethod={(value: string) => {
-            setFormData((prev) => ({...prev, 역할: value}));
+            setFormData((prev) => ({ ...prev, 역할: value }));
           }}
         />
 
         <ExperiencesInput
           title="나의 기여도"
           placeholder={`기여한 부분을 작성해주세요.
- · Design System 구축
- · 사용자 흐름 (user flow) 설계
- · 디자인 시스템 구축 및 운영
- · 전체적인 기획
- · 외부 라이브러리 사용`}
+          · Design System 구축
+          · 사용자 흐름 (user flow) 설계
+          · 디자인 시스템 구축 및 운영
+          · 전체적인 기획
+          · 외부 라이브러리 사용`}
           provider="textarea"
           star
-          max={150}
+          max={200}
           value={formData.기여도}
           onChangeMethod={(value: string) => {
-            setFormData((prev) => ({...prev, 기여도: value}));
+            setFormData((prev) => ({ ...prev, 기여도: value }));
           }}
         />
 
@@ -168,21 +189,24 @@ const AddExperience = () => {
 또한, 이 경험이 나의 성장에 어떤 영향을 미쳤는지 적어주세요.`}
           provider="textarea"
           star
-          max={150}
+          max={500}
           value={formData.느낀점}
           onChangeMethod={(value: string) => {
-            setFormData((prev) => ({...prev, 느낀점: value}));
+            setFormData((prev) => ({ ...prev, 느낀점: value }));
           }}
         />
 
-        <ThumbnailUploader 
-          setThumbnail={setThumbnail} 
-          thumbnail={thumbnail} 
+        <ThumbnailUploader
+          setThumbnail={setThumbnail}
+          thumbnail={thumbnail}
           onUploadComplete={handleThumbnailUpload}
         />
-
       </div>
-      <Button text="경험카드 추가하기" color="gray" onClick={createExperience}/>
+      <Button
+        text="경험카드 추가하기"
+        color={isFormValid() ? "blue" : "gray"}
+        onClick={createExperience}
+      />
     </main>
   );
 };

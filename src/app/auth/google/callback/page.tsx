@@ -1,13 +1,13 @@
 'use client';
 
 import { useRouter, useSearchParams } from 'next/navigation';
-import React, { useEffect } from 'react';
+import React, { Suspense } from 'react';
 
-const Callback = () => {
+const CallbackContent = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  useEffect(() => {
+  React.useEffect(() => {
     const fetchData = async () => {
       const accessToken = searchParams.get('accessToken');
       const refreshToken = searchParams.get('refreshToken');
@@ -24,10 +24,14 @@ const Callback = () => {
     fetchData();
   }, [router, searchParams]);
 
+  return <div>로딩중...</div>;
+};
+
+const Callback = () => {
   return (
-    <div>
-      로딩중...
-    </div>
+    <Suspense fallback={<div>로딩중...</div>}>
+      <CallbackContent />
+    </Suspense>
   );
 };
 

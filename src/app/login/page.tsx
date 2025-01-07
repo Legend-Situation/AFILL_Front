@@ -7,7 +7,7 @@ import { Google } from "@ui/src/icons";
 
 const Login = () => {
   const handleLogin = () => {
-    window.location.href = "https://afill.legend-situation.kro.kr/auth/google";
+    window.location.href = "https://afill-back.hash-squad.kro.kr/auth/google";
   };
 
   return (

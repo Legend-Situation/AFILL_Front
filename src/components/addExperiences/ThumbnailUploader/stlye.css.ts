@@ -9,32 +9,32 @@ export const ThumbnailUpContainer = style({
   borderRadius: '20px',
   border: '1px solid #F6F6F8',
   boxShadow: '0px 0px 10px 0px rgba(212, 212, 212, 0.25)',
-  gap: '20px',
+  gap: '20px'
 });
 
 export const ThumbnailUpInfo = style({
   display: 'flex',
   justifyContent: 'space-between',
-  alignItems: 'center',
+  alignItems: 'center'
 });
 
 export const ThumbnailUpTextContainer = style({
   display: 'flex',
-  flexDirection: 'column',
+  flexDirection: 'column'
 });
 
 export const ThumbnailUpMainText = style({
   ...font.btn1,
-  color: theme.gray.black,
+  color: theme.gray.black
 });
 
 export const ThumbnailUpText = style({
   ...font.p2,
-  color: theme.gray[400],
+  color: theme.gray[400]
 });
 
 export const ThumbnailImage = style({
   maxWidth: '300px',
   height: 'auto',
-  borderRadius: '8px',
+  borderRadius: '8px'
 });

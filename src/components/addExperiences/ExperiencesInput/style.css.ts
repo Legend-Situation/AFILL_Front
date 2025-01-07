@@ -1,7 +1,5 @@
 import { font, theme } from '@/ui/style';
-import { globalStyle, style } from '@vanilla-extract/css';
-
-export const InputContainers = style({});
+import { style } from '@vanilla-extract/css';
 
 export const inputLayout = style({
   display: 'flex',
@@ -34,14 +32,16 @@ export const periodInputContainer = style({
 export const baseInput = style({
   height: '32px',
   padding: '12px',
-  border: '1px solid #E5E5E5',
+  border: `1px solid ${theme.gray[100]}`,
   borderRadius: '8px',
   fontSize: '16px',
   color: '#333333',
   backgroundColor: '#FFFFFF',
+  outline: 'none',
+  WebkitAppearance: 'none',
   '::placeholder': {
     color: '#CCCCCC'
-  }
+  },
 });
 
 export const yearInput = style([

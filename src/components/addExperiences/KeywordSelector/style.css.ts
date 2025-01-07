@@ -12,20 +12,19 @@ export const CustomContainer = style({
   gap: '5px'
 });
 
-
 export const CustomTitle = style({
   ...font.H4,
-  color: theme.gray.black,
+  color: theme.gray.black
 });
 
 export const Star = style({
-  color: theme.sub.red,
+  color: theme.sub.red
 });
 
 export const CustomerSubtitle = style({
   ...font.p3,
   color: theme.gray[500],
-  paddingBottom: "15px",
+  paddingBottom: "15px"
 });
 
 export const KeywordContainer = style({
@@ -33,14 +32,14 @@ export const KeywordContainer = style({
   gap: "10px",
   justifyContent: "center",
   padding: "0 30px",
-  flexWrap: "wrap",
+  flexWrap: "wrap"
 });
 
 export const AddKeywordInputContainer = style({
   display: "flex",
   justifyContent: "center",
   paddingTop: "36px",
-  gap: "10px",
+  gap: "10px"
 });
 
 export const AddKeywordInput = style({
@@ -49,8 +48,9 @@ export const AddKeywordInput = style({
   border: `1px solid ${theme.gray[100]}`,
   borderRadius: "8px",
   padding: "16px",
-  outline: "none",
+  outline: 'none',
+  WebkitAppearance: 'none',
   '::placeholder': {
-    color: theme.gray[300],
+    color: theme.gray[300]
   }
 });
